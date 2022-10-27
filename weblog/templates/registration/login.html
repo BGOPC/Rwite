@@ -1,30 +1,40 @@
 {% extends "_layout.html" %}
 {% load crispy_forms_tags static %}
-{% block title %}Login to Rwite Account{% endblock title %}
+{% block title %} Login to Rwide Account {% endblock title %}
 {% block content %}
 {% block styles %}
 <script src="https://cdn.tailwindcss.com"></script>
 {% endblock styles %}
 
-<form method="post" id="signupForm" class="bg-slate-400 w-100 px-5 border-2 border-gray-900 py-3 rounded-3 h-100 my-4">
-    {% csrf_token %}
-    <div>
-        <label class="block text-center font-weight-bold text-lg">UserName</label>
-                {{ form.username }}
-    </div>
-    <div>
-        <label class="block text-center font-weight-bold text-lg">Password</label>
-                {{ form.password }}
-    </div>
-    <div class="flex items-baseline justify-center">
-        <a href="{% url 'signUp' %}" class="text-decoration-none text-gray-800 hover:text-gray-900 font-bold py-2 px-4 rounded">
-        Have an account?
-        Register
-        </a>
-    </div>
-    <div class="flex items-baseline justify-center">
-        <button class="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Login</button>
-    </div>
-    </form>
+<form
+  method="post"
+  id="signupForm"
+  class="bg-slate-400 w-100 px-5 border-2 border-gray-900 py-3 rounded-3 h-100 my-4"
+>
+  {% csrf_token %}
+  <div>
+    <label class="block text-center font-weight-bold text-lg">UserName</label>
+    {{ form.username }}
+  </div>
+  <div>
+    <label class="block text-center font-weight-bold text-lg">Password</label>
+    {{ form.password }}
+  </div>
+  <div class="flex items-baseline justify-center">
+    <a
+      href="{% url 'signUp' %}"
+      class="text-decoration-none text-gray-800 hover:text-gray-900 font-bold py-2 px-4 rounded"
+    >
+      Have an account? Register
+    </a>
+  </div>
+  <div class="flex items-baseline justify-center">
+    <button
+      class="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900"
+    >
+      Login
+    </button>
+  </div>
+</form>
 {% endblock content %}
 {% block scripts %}{% endblock scripts %}

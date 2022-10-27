@@ -29,7 +29,7 @@ class mainView(View):
         return render(request, "weblog/main.html")
 
     def post(self, request):
-        pass
+        return render(request, "weblog/main.html")
 
 
 class createView(View):
