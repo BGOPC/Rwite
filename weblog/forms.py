@@ -16,7 +16,7 @@ class registerForm(UserCreationForm):
         "class": "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
         "placeholder": "LastName"
     }))
-    
+
     username = forms.CharField(label="", error_messages={
         'required': 'Please Enter your nickname'
     }, max_length=255, widget=forms.TextInput(attrs={

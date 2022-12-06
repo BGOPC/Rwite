@@ -5,7 +5,7 @@ from django.views.generic.edit import FormView
 from django.conf import settings
 from django.shortcuts import resolve_url
 from .forms import *
-from django.contrib.auth.views import SuccessURLAllowedHostsMixin
+from django.contrib.auth.views import RedirectURLMixin
 from django.utils.http import (
     url_has_allowed_host_and_scheme, urlsafe_base64_decode,
 )
@@ -58,7 +58,7 @@ class signUpView(View):
         })
 
 
-class LoginView(SuccessURLAllowedHostsMixin, FormView):
+class LoginView(RedirectURLMixin, FormView):
     """
     Display the login form and handle the login action.
     """
